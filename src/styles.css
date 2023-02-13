@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    transition: 0.5s;
+}
+h1{
+    text-align: center;
+    color: hsl(233, 13%, 49%);
+}
+html{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: url('./images/bg-bottom.svg') left bottom no-repeat, url('./images/bg-top.svg') right top no-repeat;
+    background-color: hsl(240, 78%, 98%);
+    font-family: 'Montserrat', sans-serif;
+}
+main{
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+.offers{
+    display: flex;
+    flex: 1;
+}
+.lbl{
+    display: inline-block;
+    width: 50px;
+    height: 25px;
+    background: linear-gradient(to right, hsl(236, 60%, 69%),hsl(237, 61%, 68%));
+    border-radius: 80px;
+    cursor: pointer;
+    position: relative;
+    transition: .3s;
+}
+.lbl::after{
+    content: '';
+    position: absolute;
+    display: block;
+    width: 18px;
+    height: 18px;
+    top: 3px;
+    left: 3px;
+    background: white;
+    border-radius: 100px;
+    transition: .3s;
+}
+input{
+    display: none;
+}
+#switch:checked + .lbl::after{
+    left: 29px;
+}
+#switch:checked + .lbl{
+    background: linear-gradient(to right, hsl(236, 60%, 69%, 0.6),hsl(237, 61%, 68%, 0.5));
+}
+.switch{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    color: hsl(234, 14%, 74%);
+}
+.offer{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 230px;
+    padding: 20px 0;
+    max-height: 350px;
+    background: white;
+    border-radius: 5px;
+    text-align: center;
+}
+.category{
+    font-size: 24px;
+    color: hsl(232, 13%, 33%);
+}
+.professional{
+    background: linear-gradient(to right, hsl(236, 60%, 69%),hsl(237, 61%, 68%));
+    padding: 35px 0 45px 0;
+    text-align: center;
+    width: 260px;
+    position: relative;
+    top: -20px;
+    color: white;
+}
+.professional button{
+    background: white;
+    color: hsl(237, 63%, 64%);
+    margin-top: 10px;
+}
+.professional .category{
+    color: white;
+}
+button{
+    width: 80%;
+    margin-left: 10%;
+    padding: 5px 15px;
+    background: linear-gradient(to right, hsl(236, 72%, 79%),hsl(237, 63%, 64%));
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-family: 'Montserrat', sans-serif;
+    cursor: pointer;
+}
+button:hover{
+    transition: 1s;
+    background: transparent;
+    color: black;
+    border: 1px solid black;
+    border-radius: 20px;
+}
+.professional button:hover{
+    background: linear-gradient(to right, hsl(236, 72%, 79%),hsl(237, 63%, 64%));
+    color: white;
+    border: 1px solid white;
+    border-radius: 20px;
+}
+hr{
+    width: 80%;
+    margin-left: 10%;
+}
+.price{
+    font-size: 40px;
+}
+@media (max-width: 750px){
+    html{
+        align-items: center;
+        justify-content: normal;
+    }
+    main{
+        margin-top: 5vh;
+        padding-bottom: 5vh;
+    }
+    .offers{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        gap: 3vh;
+        margin: 0 0 0 0;
+    }
+    .offer{
+        width: 90vw;
+        padding: 40px 0;
+        margin-left: 0;
+        max-height: fit-content;
+    }
+    button{
+        padding: 10px 25px;
+    }
+    .professional{
+        top: 0;
+    }
+}
